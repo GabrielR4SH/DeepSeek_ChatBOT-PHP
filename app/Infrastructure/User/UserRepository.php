@@ -1,6 +1,7 @@
 <?php 
 
-namespace App\Domain\User\User;
+namespace App\Infrastructure\User;
+
 use App\Domain\User\User;
 use App\Infrastructure\Database\DB;
 
