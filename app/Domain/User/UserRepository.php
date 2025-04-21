@@ -29,5 +29,19 @@ class UserRepository
 
     }
 
+    public function create(User $user): void 
+    {
+        $stmt = $this->db->getConnection()->prepare(
+            "INSERT INTO user (username, emai, password_hash) VALUES (?, ?, ?)"
+        );
+
+        $stmt->execute([
+            $user->username,
+            $user->email,
+            $user->passwordHash
+        ]);
+
+    }
+
 
 }
