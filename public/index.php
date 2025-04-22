@@ -1,22 +1,18 @@
 <?php
+// Ativa modo debug
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+echo "<!-- DEBUG: Sistema iniciado -->";
+
 require_once __DIR__.'/../vendor/autoload.php';
 
-session_start();
+// Corrige o REQUEST_URI removendo o path base
+$requestUri = str_replace('/php_chat/public', '', $_SERVER['REQUEST_URI']);
+$_SERVER['REQUEST_URI'] = $requestUri ?: '/';
 
-// Configuração de roteamento básico
-$request = $_SERVER['REQUEST_URI'];
+// Debug
+echo "<!-- REQUEST_URI: ".$_SERVER['REQUEST_URI']." -->";
 
-switch ($request) {
-    case '/login':
-        require __DIR__ . '/../templates/auth/login.php';
-        break;
-    case '/register':
-        require __DIR__ . '/../templates/auth/register.php';
-        break;
-    case '/chat':
-        require __DIR__ . '/../templates/chat/index.php';
-        break;
-    default:
-        header('Location: /login');
-        exit;
-}
+$router = require __DIR__.'/../routes/web.php';
+$router->dispatch();

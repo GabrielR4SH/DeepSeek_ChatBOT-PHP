@@ -43,8 +43,11 @@ class ComposerStaticInit320e0bfe83f6bf381da73dc5e80b8acf
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
-            'Desktop\\PhpChat\\' => 16,
             'DeepCopy\\' => 9,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
@@ -93,13 +96,13 @@ class ComposerStaticInit320e0bfe83f6bf381da73dc5e80b8acf
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
-        'Desktop\\PhpChat\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

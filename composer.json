@@ -2,7 +2,7 @@
     "name": "desktop/php_chat",
     "autoload": {
         "psr-4": {
-            "Desktop\\PhpChat\\": "src/"
+            "App\\": "app/"
         }
     },
     "authors": [
